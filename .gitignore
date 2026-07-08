@@ -1,0 +1,17 @@
+# Python runtime files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+
+# Environment variables and secrets
+.env
+.flaskenv
+
+# Application logs
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
