@@ -3,81 +3,16 @@
     <head>
         <title>All Lists</title>
         <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     </head>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        div {
-            border: 1px solid white;
-            border-radius: 15px;
-            position: relative;
-            transform-style: preserve-3d;
-            background-color: black;
-            width: 90vw;
-            cursor: pointer;
-        }
-
-        @property --angle {
-            syntax: "<angle>";
-            initial-value: 0deg;
-            inherits: false;
-        }
-
-        @keyframes spin {
-            to {
-                --angle: 360deg;
-            }
-        }
-
-        div:after {
-            content: "";
-            background-image: conic-gradient(
-                from var(--angle),
-                red,
-                orange,
-                yellow,
-                green,
-                blue,
-                indigo,
-                violet,
-                red
-            );
-            animation: spin 0.7s linear infinite;
-            border-radius: 15px;
-            inset: -5px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            transform: translateZ(-1px);
-        }
-
-        h2 {
-            text-align: center;
-        }
-    </style>
+    </head>
     <body>
         <h1>All Lists</h1>
         {% for list in lists.values() %}
-        <div hx-get="/List/{{ list.id }}" hx-target="body" hx-push-url="true">
+        <div hx-get="/lists/{{ list.id }}" hx-target="body" hx-push-url="true">
             <h2>{{ list.name }}</h2>
         </div>
         {% endfor %}

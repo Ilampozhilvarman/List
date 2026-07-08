@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    border-radius: 15px;
+    position: relative;
+    transform-style: preserve-3d;
+    background-color: black;
+    width: 90vw;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    to {
+        --angle: 360deg;
+    }
+}
+
+div:after {
+    content: "";
+    background-image: conic-gradient(
+        from var(--angle),
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+    );
+    animation: spin 0.7s linear infinite;
+    border-radius: 15px;
+    inset: -5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateZ(-1px);
+}
+
+h2 {
+    text-align: center;
+}
+
+#back {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 95vw;
+    border-radius: 25px;
+    height: 75px;
+    margin-bottom: 1rem;
+    font-size: xx-large;
+    font-family: 'JetBrains Mono', monospace;
+}

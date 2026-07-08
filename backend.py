@@ -16,7 +16,7 @@ def index():
     return render_template("index.html", lists=all_lists)
 
 
-@app.route("/List/<list_id>")
+@app.route("/lists/<list_id>")
 def get_single_list(list_id):
     all_lists = get_all_lists()
 

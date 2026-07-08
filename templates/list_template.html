@@ -3,17 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/htmx.org@2.0.0"></script>
         <title>{{ current_list.name }}</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>{{ current_list.name }}</h1>
-        <ol>
-            {% for item in current_list.data %}
-            <li>{{ item }}</li>
-            {% endfor %}
-        </ol>
-        <form action="/">
-            <button type="submit">Back</button>
-        </form>
+        {% for item in current_list.data %}
+        <div>
+            <h2>{{ item }}</h2>
+        </div>
+        {% endfor %}
+        <button type="submit" id="back" hx-get="/" hx-push-url="true" hx-target="body">Back</button>
     </body>
 </html>
