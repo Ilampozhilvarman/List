@@ -1,7 +1,7 @@
 import json
 
 def get_file_data(file_path):
-    with open("data.json", 'r') as file:
+    with open(file_path, 'r') as file:
         data = json.load(file)
     return data
 

@@ -1,5 +1,5 @@
+import os
 import tools
-
 command_line = input("> ")
 args = command_line.split()
 command = args[0]
@@ -7,11 +7,26 @@ if len(args) == 3:
     if command == "new":
         tools.new_list(args[1], args[2])
     elif command == "push":
-        tools.push_list_item(args[1], args[2])
-    elif command == "":
-        pass
+        tools.add_item(args[1], args[2])
+    elif command == "delete":
+        tools.remove_item(args[1], args[2])
+    elif command == "update":
+        tools.update_list(args[1], args[2])
+
 elif len(args) == 2:
-    if command == "":
-        pass
-    elif command == "":
-        pass
+    if command == "get":
+        tools.get_list(args[1])
+    elif command == "del":
+        tools.delete_list(args[1])
+    elif command == "get":
+        tools.get_list_items(args[1])
+    elif command == "clr":
+        tools.clear_list(args[1])
+
+elif len(args) == 3:
+    if command == "edit":
+        tools.edit_item(args[1], args[2], args[3])
+
+elif len(args) == 1:
+    if command == "clear":
+        os.system("clear")
