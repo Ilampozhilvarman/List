@@ -1,13 +1,11 @@
 import subprocess
 import os
 import tools
-
 clear_command = "cls" if os.name == "nt" else "clear"
-
 args_and_their_uses = {
-    "new":    {"args": ["list_name", "list_type"], "desc": "Create a new list"},
-    "push":   {"args": ["list_name", "item"], "desc": "Add an item to a list"},
-    "delete": {"args": ["list_name", "item"], "desc": "Remove an item from a list"},
+    "new":    {"args": ["list_name", "idde"], "desc": "Create a new list"},
+    "push":   {"args": ["item", "list_name"], "desc": "Add an item to a list"},
+    "delete": {"args": ["item", "list_name"], "desc": "Remove an item from a list"},
     "update": {"args": ["list_name", "value"], "desc": "Update a list"},
     "get":    {"args": ["list_name"], "desc": "Get a list"},
     "del":    {"args": ["list_name"], "desc": "Delete a list"},
@@ -18,15 +16,12 @@ args_and_their_uses = {
     "clr":    {"args": [], "desc": "Clear the terminal"},
     "exit":   {"args": [], "desc": "Quit the program"},
 }
-
 while True:
     command_line = input("> ").strip()
     if not command_line:
         continue
-
     args = command_line.split()
     command = args[0]
-
     try:
         if command == "exit":
             break
@@ -34,9 +29,9 @@ while True:
             if command == "new":
                 tools.new_list(args[1], args[2])
             elif command == "push":
-                tools.add_item(args[1], args[2])
+                tools.add_item(args[2], args[1])
             elif command == "delete":
-                tools.remove_item(args[1], args[2])
+                tools.remove_item(args[2], args[1])
             elif command == "update":
                 tools.update_list(args[1], args[2])
             else:
