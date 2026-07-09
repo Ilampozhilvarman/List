@@ -1,36 +1,17 @@
-import json
-command = input("> ")
-args = command.split()
+import tools
 
-def get_data_file():
-    pass
-
-def new_list(name):
-    pass
-
-def push_data(list_name, data):
-    pass
-
-def get_all_data_in_ls(list_name):
-    pass
-
-def get_all_data(list_name):
-    pass
-
-def get_data(list_name, index):
-    pass
-
-def delete_data(list_name, index):
-    pass
-
-def update_data(list_name, index, data):
-    pass
-
-def delete_list(list_name):
-    pass
-
-def edit_name(list_name, new_name):
-    pass
-
-def edit_id(list_name, new_id):
-    pass
+command_line = input("> ")
+args = command_line.split()
+command = args[0]
+if len(args) == 3:
+    if command == "new":
+        tools.new_list(args[1], args[2])
+    elif command == "push":
+        tools.push_list_item(args[1], args[2])
+    elif command == "":
+        pass
+elif len(args) == 2:
+    if command == "":
+        pass
+    elif command == "":
+        pass
