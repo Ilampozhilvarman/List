@@ -4,7 +4,8 @@ from flask import Flask, abort, render_template
 
 app = Flask(__name__)
 
-
+print("Server starting...")
+print("Go to http://localhost:8080/")
 def get_all_lists():
     with open("data.json", "r") as f:
         return json.load(f)
@@ -35,4 +36,4 @@ def get_single_list(list_id):
 
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", debug=True, port=8080)
+    app.run("0.0.0.0", debug=False, port=8080)
