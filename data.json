@@ -1,14 +1,1 @@
-{
-  "Ilam's Favorite Gd Levels": {
-    "data": [
-      "Hexagon Force",
-      "Deadlocked",
-      "Cataclysm",
-      "Bloodbath",
-      "Sonic wave",
-      "Tidal wave"
-    ],
-    "name": "My favorite GD levels",
-    "id": "ilam_favorite_gd_levels"
-  }
-}
+{"Ilam's Favorite Gd Levels": {"data": ["Hexagon Force", "Deadlocked", "Cataclysm", "Bloodbath", "Sonic wave", "Tidal wave"], "name": "My favorite GD levels", "id": "ilam_favorite_gd_levels"}}
