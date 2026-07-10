@@ -3,7 +3,7 @@ import os
 import tools
 clear_command = "cls" if os.name == "nt" else "clear"
 args_and_their_uses = {
-    "new":    {"args": ["list_name", "idde"], "desc": "Create a new list"},
+    "new":    {"args": ["list_name", "id"], "desc": "Create a new list"},
     "push":   {"args": ["item", "list_name"], "desc": "Add an item to a list"},
     "delete": {"args": ["item", "list_name"], "desc": "Remove an item from a list"},
     "update": {"args": ["list_name", "value"], "desc": "Update a list"},
